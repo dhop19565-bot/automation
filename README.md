@@ -45,6 +45,7 @@ proposal on purpose so you can watch validation block it.
 pytest                                   # 181 tests, no network, no API key needed
 python scripts/live_check.py             # one real run through Claude; needs ANTHROPIC_API_KEY
 python scripts/live_check.py --provider demo
+python scripts/noi_live_check.py         # real questions to the NOI dashboard's chat; needs ANTHROPIC_API_KEY
 ```
 
 `live_check.py` is the proof step for real AI execution: it sends the sample documents
