@@ -1,0 +1,77 @@
+{
+  "report_id": "VAL-FAH01-2026-10",
+  "source": "Northbridge Treasury Services - month-end valuation statement (FICTIONAL)",
+  "entity": "FAH01",
+  "period": "2026-10",
+  "valuation_date": "2026-10-31",
+  "currency": "GBP",
+  "fictional": true,
+  "instruments": [
+    {
+      "instrument_id": "FXF-001",
+      "instrument_type": "FX forward - sell USD / buy GBP",
+      "counterparty": "Harbour Bank plc (fictional)",
+      "notional": "2500000.00",
+      "notional_currency": "USD",
+      "maturity_date": "2027-01-29",
+      "hedge_designation": "none",
+      "prior_fair_value": "42000.00",
+      "current_fair_value": "61500.00",
+      "notes": "Economic hedge of USD receivables. Hedge accounting not applied."
+    },
+    {
+      "instrument_id": "FXF-002",
+      "instrument_type": "FX forward - buy EUR / sell GBP",
+      "counterparty": "Meridian Capital Markets (fictional)",
+      "notional": "1800000.00",
+      "notional_currency": "EUR",
+      "maturity_date": "2026-12-18",
+      "hedge_designation": "none",
+      "prior_fair_value": "12300.00",
+      "current_fair_value": "-8750.00",
+      "notes": "Moved out of the money during October."
+    },
+    {
+      "instrument_id": "FXF-003",
+      "instrument_type": "FX forward - buy USD / sell GBP",
+      "counterparty": "Harbour Bank plc (fictional)",
+      "notional": "900000.00",
+      "notional_currency": "USD",
+      "maturity_date": "2027-03-31",
+      "hedge_designation": "none",
+      "prior_fair_value": "0.00",
+      "current_fair_value": "-4200.00",
+      "notes": "Traded 14 October 2026. No prior valuation."
+    },
+    {
+      "instrument_id": "IRS-001",
+      "instrument_type": "Interest rate swap - pay fixed 4.10% / receive SONIA",
+      "counterparty": "Meridian Capital Markets (fictional)",
+      "notional": "10000000.00",
+      "notional_currency": "GBP",
+      "maturity_date": "2029-06-30",
+      "hedge_designation": "cash_flow_hedge",
+      "prior_fair_value": "-135000.00",
+      "current_fair_value": "-98400.00",
+      "cumulative_fv_change_instrument": "-98400.00",
+      "cumulative_fv_change_hedged_item": "101200.00",
+      "cfh_reserve_opening": "-135000.00",
+      "notes": "Hedges floating-rate term loan TL-2024-A."
+    },
+    {
+      "instrument_id": "IRS-002",
+      "instrument_type": "Interest rate swap - pay fixed 3.65% / receive SONIA",
+      "counterparty": "Harbour Bank plc (fictional)",
+      "notional": "8000000.00",
+      "notional_currency": "GBP",
+      "maturity_date": "2028-09-30",
+      "hedge_designation": "cash_flow_hedge",
+      "prior_fair_value": "54000.00",
+      "current_fair_value": "77250.00",
+      "cumulative_fv_change_instrument": "77250.00",
+      "cumulative_fv_change_hedged_item": "-71900.00",
+      "cfh_reserve_opening": "54000.00",
+      "notes": "Hedges floating-rate term loan TL-2023-B. Loan was part-repaid in September; swap notional now exceeds the hedged exposure."
+    }
+  ]
+}

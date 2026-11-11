@@ -1,0 +1,24 @@
+{
+  "entity": "FAH01",
+  "period": "2026-10",
+  "currency": "GBP",
+  "fictional": true,
+  "lines": [
+    {"account": "1000", "name": "Cash at bank", "category": "asset", "balance": "1250000.00"},
+    {"account": "1200", "name": "Trade receivables", "category": "asset", "balance": "830400.00"},
+    {"account": "1500", "name": "Derivative financial assets", "category": "asset", "balance": "108300.00"},
+    {"account": "1700", "name": "Property, plant and equipment", "category": "asset", "balance": "2400000.00"},
+    {"account": "2000", "name": "Trade payables", "category": "liability", "balance": "-615250.00"},
+    {"account": "2500", "name": "Derivative financial liabilities", "category": "liability", "balance": "-135000.00"},
+    {"account": "2600", "name": "Bank borrowings", "category": "liability", "balance": "-1800000.00"},
+    {"account": "3000", "name": "Share capital", "category": "equity", "balance": "-500000.00"},
+    {"account": "3100", "name": "Retained earnings", "category": "equity", "balance": "-1204950.00"},
+    {"account": "3500", "name": "Cash flow hedge reserve", "category": "equity", "balance": "81000.00"},
+    {"account": "4000", "name": "Revenue", "category": "income", "balance": "-3950000.00"},
+    {"account": "5000", "name": "Cost of sales", "category": "expense", "balance": "2310000.00"},
+    {"account": "6000", "name": "Operating expenses", "category": "expense", "balance": "1105500.00"},
+    {"account": "6500", "name": "Interest expense", "category": "expense", "balance": "96000.00"},
+    {"account": "7100", "name": "Fair value gains/losses on derivatives", "category": "expense", "balance": "24000.00"},
+    {"account": "7110", "name": "Hedge ineffectiveness", "category": "expense", "balance": "0.00"}
+  ]
+}

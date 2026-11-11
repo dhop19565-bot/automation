@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Finance Automation Hub</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">FA</span>
+      <div>
+        <h1>Finance Automation Hub</h1>
+        <p class="brand-sub">Fictional data only · month-end close</p>
+      </div>
+    </div>
+    <div class="identity">
+      <label for="user-select">Acting as</label>
+      <select id="user-select"></select>
+      <span class="identity-note" id="identity-note"></span>
+    </div>
+  </header>
+
+  <nav class="tabs" role="tablist">
+    <button class="tab" role="tab" data-view="checklist" aria-selected="true">Month-end checklist</button>
+    <button class="tab" role="tab" data-view="launch" aria-selected="false">Run a workflow</button>
+    <button class="tab" role="tab" data-view="runs" aria-selected="false">Runs</button>
+    <button class="tab" role="tab" data-view="audit" aria-selected="false">Audit log</button>
+  </nav>
+
+  <main>
+    <section id="view-checklist" class="view"></section>
+    <section id="view-launch" class="view" hidden></section>
+    <section id="view-runs" class="view" hidden></section>
+    <section id="view-run" class="view" hidden></section>
+    <section id="view-audit" class="view" hidden></section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <script src="/static/app.js"></script>
+</body>
+</html>
