@@ -42,8 +42,14 @@ the *Acting as* selector to Jo, approve. The two extra demo scenarios produce a 
 proposal on purpose so you can watch validation block it.
 
 ```bash
-pytest          # 139 tests, no network, no API key needed
+pytest                                   # 139 tests, no network, no API key needed
+python scripts/live_check.py             # one real run through Claude; needs ANTHROPIC_API_KEY
+python scripts/live_check.py --provider demo
 ```
+
+`live_check.py` is the proof step for real AI execution: it sends the sample documents
+to the provider, prints the model, request ID, token usage and validation result, then
+approves as a second user and posts to the simulated ledger.
 
 ## How it fits together
 
@@ -122,6 +128,7 @@ hub/
   integrations/d365.py       simulated ledger posting
   static/                    frontend (no build step)
 fixtures/                    fictional valuation report and trial balance
+scripts/live_check.py        one-command end-to-end proof run
 tests/                       engine, accounting, duplicates, approvals, Claude provider, API
 ```
 
@@ -144,8 +151,9 @@ Anthropic's recommended model inside the same call. Delete the two lines marked 
 
 - **No authentication.** The `X-Hub-User` header is believed. Replace
   `hub/identity.py` with verified sign-in before any real data is involved.
-- **The Claude path has been tested against a mocked HTTP transport, not a live key**,
-  unless you have run it yourself with `ANTHROPIC_API_KEY` set.
+- **The Claude path has been tested against a mocked HTTP transport, not a live key.**
+  No live call was made when this was built. Run `python scripts/live_check.py` with
+  `ANTHROPIC_API_KEY` set to close that gap.
 - The accounting policy is simplified: no tax, no CVA/DVA, no settlements, no fair value
   hedges, no reclassification out of the hedge reserve.
 - One process, one SQLite file. Fine for a demo; not a production topology.
