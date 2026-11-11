@@ -73,7 +73,7 @@ class ClaudeProvider(AIProvider):
         user_content = (
             "Here is the data for this run as JSON.\n\n"
             f"<run_data>\n{json.dumps(task.payload, indent=2, sort_keys=True)}\n</run_data>\n\n"
-            "Return the journal proposal."
+            f"{task.request}"
         )
         try:
             response = await client.beta.messages.create(
@@ -83,7 +83,7 @@ class ClaudeProvider(AIProvider):
                 fallbacks="default",
                 system=task.instructions,
                 output_config={
-                    "effort": self._effort,
+                    "effort": task.options.get("effort") or self._effort,
                     "format": {"type": "json_schema", "schema": task.output_schema},
                 },
                 messages=[{"role": "user", "content": user_content}],

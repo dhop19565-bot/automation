@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NOI dashboard · Finance Automation Hub</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="stylesheet" href="/static/noi.css">
+</head>
+<body class="noi">
+  <header class="topbar no-print">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">FA</span>
+      <div>
+        <h1>NOI dashboard</h1>
+        <p class="brand-sub" id="brand-sub">Fictional data only</p>
+      </div>
+    </div>
+    <div class="row">
+      <a class="toplink" href="/">Month-end hub</a>
+      <button class="btn ghost" id="btn-edit" aria-pressed="false">Customise</button>
+      <button class="btn ghost" id="btn-print">Print / save as PDF</button>
+      <button class="btn ghost" id="btn-chat" aria-pressed="true">Ask AI</button>
+    </div>
+  </header>
+
+  <section class="filters no-print" aria-label="Filters">
+    <div class="filter">
+      <span class="filter-label">Period</span>
+      <select id="f-from" aria-label="From month"></select>
+      <span class="muted">to</span>
+      <select id="f-to" aria-label="To month"></select>
+      <div class="seg" id="f-presets" role="group" aria-label="Period presets"></div>
+    </div>
+    <div class="filter">
+      <span class="filter-label">Compare with</span>
+      <div class="seg" id="f-compare" role="group" aria-label="Comparison basis"></div>
+    </div>
+    <div class="filter" id="f-sector-wrap">
+      <span class="filter-label">Sector</span>
+      <div class="chips" id="f-sectors"></div>
+    </div>
+    <div class="filter" id="f-region-wrap">
+      <span class="filter-label">Region</span>
+      <div class="chips" id="f-regions"></div>
+    </div>
+    <div class="filter">
+      <span class="filter-label">Property</span>
+      <select id="f-property" aria-label="Property"></select>
+    </div>
+  </section>
+
+  <div class="shell" id="shell">
+    <main class="board">
+      <header class="report-head">
+        <div class="min0">
+          <nav class="crumbs no-print" id="crumbs" aria-label="Breadcrumb"></nav>
+          <h2 id="report-title" spellcheck="false"></h2>
+          <p class="report-sub" id="report-sub"></p>
+        </div>
+        <p class="report-stamp" id="report-stamp"></p>
+      </header>
+      <div id="property-note"></div>
+      <div class="edit-bar no-print" id="edit-bar" hidden></div>
+      <div class="widgets" id="widgets"></div>
+      <p class="report-foot" id="report-foot"></p>
+    </main>
+
+    <aside class="chat no-print" id="chat" aria-label="Ask about this data">
+      <header class="chat-head">
+        <div class="row spread">
+          <h3>Ask about this data</h3>
+          <button class="btn link small" id="chat-clear">Clear</button>
+        </div>
+        <label class="chat-provider"><span class="muted small">Answered by</span>
+          <select id="chat-provider"></select></label>
+        <p class="small muted" id="chat-provider-note"></p>
+      </header>
+      <div class="chat-log" id="chat-log" aria-live="polite"></div>
+      <form class="chat-form" id="chat-form">
+        <textarea id="chat-input" rows="2" maxlength="1000"
+          placeholder="Ask about NOI, variances, costs, occupancy or a property"></textarea>
+        <button class="btn" id="chat-send" type="submit">Ask</button>
+      </form>
+    </aside>
+  </div>
+
+  <div id="tip" class="tip" hidden></div>
+  <div id="toast" class="toast no-print" role="status" aria-live="polite" hidden></div>
+  <script src="/static/noi.js"></script>
+</body>
+</html>

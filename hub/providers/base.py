@@ -26,6 +26,8 @@ class ProviderTask:
     payload: dict[str, Any]
     output_schema: dict[str, Any]
     options: dict[str, Any] = field(default_factory=dict)
+    # Closing sentence of the user message: what the provider is asked to return.
+    request: str = "Return the journal proposal."
 
 
 @dataclass(frozen=True)
