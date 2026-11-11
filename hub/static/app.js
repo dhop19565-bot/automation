@@ -70,7 +70,22 @@ function show(view) {
     tab.setAttribute("aria-selected", String(tab.dataset.view === view || (view === "run" && tab.dataset.view === "runs")));
   }
   ({ checklist: renderChecklist, launch: renderLaunch, runs: renderRuns, run: renderRun, audit: renderAudit })[view]()
+    .then(labelTables)
     .catch((error) => toast(error.message, true));
+}
+
+/* Copy each column heading onto its cells so the phone layout can show "label: value" rows. */
+function labelTables() {
+  for (const table of document.querySelectorAll("main table")) {
+    const headings = [...table.querySelectorAll("thead th")].map((th) => th.textContent.trim());
+    for (const row of table.querySelectorAll("tbody tr")) {
+      let column = 0;
+      for (const cell of row.children) {
+        if (cell.colSpan === 1 && headings[column]) cell.dataset.label = headings[column];
+        column += cell.colSpan;
+      }
+    }
+  }
 }
 function openRun(id) { state.runId = id; show("run"); }
 

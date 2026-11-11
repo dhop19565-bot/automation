@@ -124,4 +124,24 @@ input[type="text"], select.input { padding: 8px 10px; border: 1px solid var(--ru
 .toast { position: fixed; right: 20px; bottom: 20px; max-width: 420px; background: var(--ink); color: #fff;
   padding: 12px 16px; border-radius: 6px; box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25); }
 .toast.bad { background: var(--bad); }
-@media (max-width: 640px) { main { padding: 16px; } .topbar, .tabs { padding-left: 16px; padding-right: 16px; } }
+@media (max-width: 640px) {
+  main { padding: 16px; }
+  .topbar, .tabs { padding-left: 16px; padding-right: 16px; }
+  .card { padding: 14px; }
+  /* Phone layout: each table row becomes a labelled block, so no column is hidden off-screen. */
+  .table-wrap { overflow-x: visible; }
+  thead { display: none; }
+  table, tbody { display: block; }
+  tr { display: block; padding: 10px 0; border-bottom: 1px solid var(--rule); }
+  tr.total { border-top: 1.5px solid var(--ink); border-bottom: 0; }
+  .journal tr { padding-left: 12px; padding-right: 12px; }
+  td, td.num { display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
+    padding: 2px 0; border: 0; text-align: right; white-space: normal; overflow-wrap: anywhere; }
+  tr.total td { border: 0; }
+  td::before { content: attr(data-label); flex: none; text-align: left; color: var(--ink-soft);
+    font: 600 11px var(--sans); text-transform: uppercase; letter-spacing: 0.06em; }
+  td:first-child { display: block; text-align: left; font-weight: 600; padding-bottom: 4px; }
+  td:first-child::before, td:not([data-label])::before { content: none; }
+  td:first-child .small { font-weight: 400; }
+  td:empty { display: none; }
+}
